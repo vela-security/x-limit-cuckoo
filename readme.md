@@ -4,6 +4,11 @@
 ## 安装
 先要安装库和编译库文件 下面基于openresty安装
 
+## 架构
+原理架构图
+
+![架构图](images/01.gif)
+
 ```bash
 git clone https://github.com/vela-security/x-limit-cuckoo.git
 cd x-limit-cuckoo/cuckoo
@@ -39,6 +44,20 @@ location / {
 
 }
 
-
-
 ```
+
+## 例子
+
+请求测试
+
+```bash
+# bash 直接命令行运行即可
+for (( c=1; c<=100; c++ )); do curl http://site.com/x?uid=$RANDOM; sleep 0.1s ;done
+```
+结果
+
+![结果](images/02.png)
+
+日志
+
+![日志](images/03.png)
