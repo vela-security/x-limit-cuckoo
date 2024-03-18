@@ -83,8 +83,7 @@ function _M.access(shm_name, client_name ,second , limit , count ,time, lock, ta
     
     local bl = black:get(key)
     if bl then
-        ngx.var._risk = "cuckoo bad"
-    	black:set(key , bl + 1 , lock) 
+    	black:set(key , bl + 1 , lock)
         return true
     end
     
